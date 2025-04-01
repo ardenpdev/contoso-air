@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: contoso-air-cicd
+  namespace: sample-app-namespace-1743513558243
+  labels:
+    app.kubernetes.io/name: contoso-air-cicd
+    kubernetes.azure.com/generator: devhub
+spec:
+  type: LoadBalancer
+  selector:
+    app.kubernetes.io/name: contoso-air-cicd
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
